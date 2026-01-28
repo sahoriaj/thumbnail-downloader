@@ -12,15 +12,20 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, lang, setLang }) => {
   return (
     <header>
+      {/* Logo */}
       <Link to="/" className="logo">
         <Youtube className="logo-icon" strokeWidth={2.5} />
+        <span className="logo-text">ThumbGrabber</span>
       </Link>
 
       <div className="header-controls">
-        <Link to="/about" className="icon-btn-header support-btn" title="About Us">
-          <Heart />
-        </Link>
+        {/* DONATE BUTTON - Styled like your screenshot */}
+        <a href="https://ko-fi.com/" target="_blank" rel="noopener noreferrer" className="donate-btn">
+          <Heart className="donate-icon" />
+          <span>Donate</span>
+        </a>
 
+        {/* Language Selector */}
         <div className="lang-wrapper">
           <Globe className="lang-icon" size={16} />
           <select 
@@ -33,6 +38,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, lang, setLang }) =>
           </select>
         </div>
 
+        {/* Theme Toggle - Sun/Moon Icons */}
         <button 
           className="icon-btn-header theme-btn" 
           onClick={toggleTheme} 
