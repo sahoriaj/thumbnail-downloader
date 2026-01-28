@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { 
-  Youtube, Search, CheckCircle, HelpCircle, Clipboard, X, Download, Image as ImageIcon, Loader2 
+  Youtube, Search, CheckCircle, Clipboard, X, Download, Image as ImageIcon, Loader2 
 } from 'lucide-react';
 import { Thumbnail, AnalyzeResponse, Translation } from '../types';
+import FAQ from '../components/FAQ'; // Import the new FAQ
 
 interface HomeProps {
   lang: string;
@@ -157,14 +158,8 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
           </div>
         )}
 
-        <div className="faq-section">
-          <div className="section-title"><HelpCircle /> {t.faq}</div>
-          <div className="faq-grid">
-            <div className="faq-item"><h3>Is it free?</h3><p>Yes, totally free for unlimited use.</p></div>
-            <div className="faq-item"><h3>What about 8K?</h3><p>We automatically detect if the video has an 8K thumbnail.</p></div>
-            <div className="faq-item"><h3>Shorts Support?</h3><p>Yes, simply paste the Shorts link to extract the cover.</p></div>
-          </div>
-        </div>
+        {/* REPLACED OLD FAQ WITH NEW COMPONENT */}
+        <FAQ />
     </>
   );
 };
