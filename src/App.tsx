@@ -43,10 +43,11 @@ const App: React.FC = () => {
 
         <main>
           <Routes>
+            {/* Pass 'lang' to ALL pages now */}
             <Route path="/" element={<Home lang={lang} />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
+            <Route path="/about" element={<About lang={lang} />} />
+            <Route path="/privacy" element={<Privacy lang={lang} />} />
+            <Route path="/terms" element={<Terms lang={lang} />} />
           </Routes>
         </main>
 
