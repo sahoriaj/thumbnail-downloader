@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Youtube, Heart, Globe, Sun, Moon } from 'lucide-react';
+import { Youtube, Heart, Sun, Moon } from 'lucide-react';
+import LanguageSelector from './LanguageSelector'; // Import the new component
 
 interface HeaderProps {
   theme: string;
@@ -19,26 +20,16 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, lang, setLang }) =>
       </Link>
 
       <div className="header-controls">
-        {/* DONATE BUTTON - Styled like your screenshot */}
-        <a href="https://ko-fi.com/" target="_blank" rel="noopener noreferrer" className="donate-btn">
+        {/* DONATE BUTTON - Minimalist (No Background) */}
+        <a href="https://ko-fi.com/" target="_blank" rel="noopener noreferrer" className="donate-btn-minimal" title="Donate">
           <Heart className="donate-icon" />
           <span>Donate</span>
         </a>
 
-        {/* Language Selector */}
-        <div className="lang-wrapper">
-          <Globe className="lang-icon" size={16} />
-          <select 
-            value={lang} 
-            onChange={(e) => setLang(e.target.value)} 
-            className="lang-select"
-          >
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
-        </div>
+        {/* NEW LANGUAGE SELECTOR */}
+        <LanguageSelector currentLang={lang} setLang={setLang} />
 
-        {/* Theme Toggle - Sun/Moon Icons */}
+        {/* Theme Toggle */}
         <button 
           className="icon-btn-header theme-btn" 
           onClick={toggleTheme} 
