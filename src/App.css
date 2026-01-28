@@ -85,6 +85,64 @@ a.logo {
     width: 22px;
     height: 22px;
 }
+/* ... existing CSS ... */
+
+/* HEADER UPDATES */
+.logo-text {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-left: 8px;
+  letter-spacing: -0.5px;
+  display: none; /* Hidden on very small screens */
+}
+
+@media (min-width: 600px) {
+  .logo-text { display: block; }
+}
+
+/* DONATE BUTTON STYLE (Matches your screenshot) */
+.donate-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0f2fe; /* Light Blue Background */
+  color: #0f172a;
+  border-radius: 12px;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid #bae6fd;
+  transition: transform 0.2s, background-color 0.2s;
+  height: 40px;
+  min-width: 50px;
+}
+
+.donate-btn:hover {
+  transform: translateY(-2px);
+  background-color: #bae6fd;
+}
+
+/* The Heart Icon inside Donate */
+.donate-icon {
+  width: 16px;
+  height: 16px;
+  color: #0ea5e9; /* Blue/Teal Heart Color */
+  margin-bottom: 2px;
+  fill: none; /* Outline style like image */
+  stroke-width: 2.5px;
+}
+
+/* Dark Mode Adjustments for Donate Button */
+[data-theme="dark"] .donate-btn {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+[data-theme="dark"] .donate-icon {
+  color: #38bdf8;
+}
 
 .support-btn { color: #ec4899; } /* Pink Heart */
 .support-btn svg { fill: #ec4899; } /* Solid Fill */
