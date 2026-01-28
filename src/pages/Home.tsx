@@ -327,10 +327,11 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
              </div>
           </div>
         )}
-
-        <FAQ />
+        {/* Pass the lang prop here! */}
+        <FAQ lang={lang} />
     </>
   );
 };
 
 export default Home;
+
