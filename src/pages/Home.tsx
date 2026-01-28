@@ -4,12 +4,13 @@ import {
   Youtube, Search, CheckCircle, Clipboard, X, Download, Image as ImageIcon, Loader2 
 } from 'lucide-react';
 import { Thumbnail, AnalyzeResponse, Translation } from '../types';
-import FAQ from '../components/FAQ'; // Import the new FAQ
+import FAQ from '../components/FAQ';
 
 interface HomeProps {
   lang: string;
 }
 
+// FULL TRANSLATION DATABASE
 const translations: Record<string, Translation> = {
   en: {
     title: "YouTube Thumbnail Downloader",
@@ -36,6 +37,175 @@ const translations: Record<string, Translation> = {
     scanning: "Escaneando...",
     paste: "Pegar",
     clear: "Borrar"
+  },
+  fr: {
+    title: "Téléchargeur de Miniatures",
+    subtitle: "Obtenez des miniatures 8K, 4K et HD instantanément.",
+    placeholder: "Collez le lien YouTube ici...",
+    btn: "Chercher",
+    res: "Résolutions Disponibles",
+    faq: "FAQ",
+    dl: "Télécharger",
+    downloading: "Enregistrement...",
+    scanning: "Scan en cours...",
+    paste: "Coller",
+    clear: "Effacer"
+  },
+  de: {
+    title: "YouTube Thumbnail Downloader",
+    subtitle: "Laden Sie 8K, 4K & HD Thumbnails sofort herunter.",
+    placeholder: "YouTube-Link hier einfügen...",
+    btn: "Suchen",
+    res: "Verfügbare Auflösungen",
+    faq: "FAQ",
+    dl: "Herunterladen",
+    downloading: "Speichern...",
+    scanning: "Scannen...",
+    paste: "Einfügen",
+    clear: "Löschen"
+  },
+  it: {
+    title: "Scaricatore di Miniature",
+    subtitle: "Ottieni miniature 8K, 4K e HD istantaneamente.",
+    placeholder: "Incolla il link YouTube...",
+    btn: "Cerca",
+    res: "Risoluzioni Disponibili",
+    faq: "FAQ",
+    dl: "Scarica",
+    downloading: "Salvataggio...",
+    scanning: "Scansione...",
+    paste: "Incolla",
+    clear: "Cancella"
+  },
+  pt: {
+    title: "Baixador de Miniaturas",
+    subtitle: "Baixe miniaturas em 8K, 4K e HD instantaneamente.",
+    placeholder: "Cole o link do YouTube...",
+    btn: "Buscar",
+    res: "Resoluções Disponíveis",
+    faq: "Perguntas Frequentes",
+    dl: "Baixar",
+    downloading: "Salvando...",
+    scanning: "Escaneando...",
+    paste: "Colar",
+    clear: "Limpar"
+  },
+  ru: {
+    title: "Загрузчик значков YouTube",
+    subtitle: "Скачивайте значки в 8K, 4K и HD мгновенно.",
+    placeholder: "Вставьте ссылку на YouTube...",
+    btn: "Найти",
+    res: "Доступные разрешения",
+    faq: "FAQ",
+    dl: "Скачать",
+    downloading: "Сохранение...",
+    scanning: "Сканирование...",
+    paste: "Вставить",
+    clear: "Очистить"
+  },
+  zh: {
+    title: "YouTube 缩略图下载器",
+    subtitle: "即时获取 8K、4K 和 HD 缩略图。",
+    placeholder: "粘贴 YouTube 视频链接...",
+    btn: "获取缩略图",
+    res: "可用分辨率",
+    faq: "常见问题",
+    dl: "下载",
+    downloading: "保存中...",
+    scanning: "扫描中...",
+    paste: "粘贴",
+    clear: "清除"
+  },
+  ja: {
+    title: "YouTube サムネイルダウンローダー",
+    subtitle: "8K、4K、HDのサムネイルを瞬時に取得。",
+    placeholder: "YouTubeのリンクを貼り付け...",
+    btn: "検索",
+    res: "利用可能な解像度",
+    faq: "よくある質問",
+    dl: "ダウンロード",
+    downloading: "保存中...",
+    scanning: "スキャン中...",
+    paste: "貼り付け",
+    clear: "クリア"
+  },
+  hi: {
+    title: "YouTube थंबनेल डाउनलोडर",
+    subtitle: "8K, 4K और HD थंबनेल तुरंत डाउनलोड करें।",
+    placeholder: "YouTube वीडियो लिंक पेस्ट करें...",
+    btn: "खोजें",
+    res: "उपलब्ध रेजोल्यूशन",
+    faq: "सामान्य प्रश्न",
+    dl: "डाउनलोड",
+    downloading: "सहेज रहा है...",
+    scanning: "स्कैनिंग...",
+    paste: "पेस्ट",
+    clear: "साफ़ करें"
+  },
+  ar: {
+    title: "محمل الصور المصغرة",
+    subtitle: "احصل على صور بدقة 8K و 4K و HD فوراً.",
+    placeholder: "ضع رابط الفيديو هنا...",
+    btn: "بحث",
+    res: "الجودات المتاحة",
+    faq: "الأسئلة الشائعة",
+    dl: "تحميل",
+    downloading: "جاري الحفظ...",
+    scanning: "جاري المسح...",
+    paste: "لصق",
+    clear: "مسح"
+  },
+  ko: {
+    title: "YouTube 썸네일 다운로더",
+    subtitle: "8K, 4K 및 HD 썸네일을 즉시 받으세요.",
+    placeholder: "YouTube 링크 붙여넣기...",
+    btn: "검색",
+    res: "사용 가능한 해상도",
+    faq: "FAQ",
+    dl: "다운로드",
+    downloading: "저장 중...",
+    scanning: "스캔 중...",
+    paste: "붙여넣기",
+    clear: "지우기"
+  },
+  tr: {
+    title: "Küçük Resim İndirici",
+    subtitle: "8K, 4K ve HD küçük resimleri anında indirin.",
+    placeholder: "YouTube bağlantısını yapıştırın...",
+    btn: "Bul",
+    res: "Mevcut Çözünürlükler",
+    faq: "SSS",
+    dl: "İndir",
+    downloading: "Kaydediliyor...",
+    scanning: "Taranıyor...",
+    paste: "Yapıştır",
+    clear: "Temizle"
+  },
+  vi: {
+    title: "Trình tải hình thu nhỏ YouTube",
+    subtitle: "Tải hình thu nhỏ 8K, 4K & HD ngay lập tức.",
+    placeholder: "Dán liên kết YouTube...",
+    btn: "Tìm kiếm",
+    res: "Độ phân giải có sẵn",
+    faq: "Câu hỏi thường gặp",
+    dl: "Tải xuống",
+    downloading: "Đang lưu...",
+    scanning: "Đang quét...",
+    paste: "Dán",
+    clear: "Xóa"
+  },
+  id: {
+    title: "Pengunduh Thumbnail YouTube",
+    subtitle: "Dapatkan thumbnail 8K, 4K & HD secara instan.",
+    placeholder: "Tempel Tautan YouTube...",
+    btn: "Cari",
+    res: "Resolusi Tersedia",
+    faq: "FAQ",
+    dl: "Unduh",
+    downloading: "Menyimpan...",
+    scanning: "Memindai...",
+    paste: "Tempel",
+    clear: "Hapus"
   }
 };
 
@@ -158,7 +328,6 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
           </div>
         )}
 
-        {/* REPLACED OLD FAQ WITH NEW COMPONENT */}
         <FAQ />
     </>
   );
