@@ -26,7 +26,6 @@ const content: Record<string, any> = {
     li2: "Privacidad: No almacenamos tu historial de búsqueda ni archivos descargados.",
     li3: "Rápido y Gratis: Sin límites, sin tarifas ocultas y procesamiento ultrarrápido."
   }
-  // Other languages will fallback to English
 };
 
 const About: React.FC<PageProps> = ({ lang }) => {
