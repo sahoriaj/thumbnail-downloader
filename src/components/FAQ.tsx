@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 
+// THIS INTERFACE IS CRITICAL
 interface FAQProps {
   lang?: string;
 }
@@ -12,7 +13,7 @@ const FAQ: React.FC<FAQProps> = ({ lang = 'en' }) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // 1. Define English Data (Fallback)
+  // 1. English Data
   const enData = [
     {
       category: "General",
@@ -45,7 +46,7 @@ const FAQ: React.FC<FAQProps> = ({ lang = 'en' }) => {
     }
   ];
 
-  // 2. Define Spanish Data (Example)
+  // 2. Spanish Data
   const esData = [
     {
       category: "General",
@@ -78,15 +79,14 @@ const FAQ: React.FC<FAQProps> = ({ lang = 'en' }) => {
     }
   ];
 
-  // 3. Language Map
+  // Language Map
   const dataMap: Record<string, typeof enData> = {
     en: enData,
     es: esData,
-    // Add other languages here (e.g., fr: frData)
-    // For now, other languages will fall back to English automatically below
+    // Add other languages here if you have translations for them
   };
 
-  // Select data based on lang, fallback to English if missing
+  // Select data based on lang, fallback to English
   const activeData = dataMap[lang] || enData;
 
   const titleMap: Record<string, string> = {
